@@ -26,7 +26,8 @@ public class Car {
     }
 
     public static void main(String[] args) {
-        Car myCar = new Car("Dark Gray", "BMW");
-        myCar.printDescription();
+        Car car1 = new Car("red", "Sedan");
+        Car car2 = new Car("blue", "Station Wagon");
+        Car car3 = new Car("white", "Coupe");
     }
 }
