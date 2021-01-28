@@ -1,13 +1,20 @@
 public class Car {
     String color;
     String type;
+    int serialNumber;
+    static int carCount;
+
+    Car() {
+        carCount++;
+        serialNumber = carCount;
+    }
 
     Car(String c, String t) {
         color = c;
         type = t;
+        carCount++;
+        serialNumber = carCount;
     }
-
-    Car() {}
 
     void start() {
         System.out.println("Get Started!");
