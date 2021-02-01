@@ -5,15 +5,22 @@ Link to Spring Training repo: https://github.com/in28minutes/spring-master-class
  - Code example: tight coupling to loose coupling
     
     //Tight Coupling
+    
     public class ComplexBusinessService {SortAlgo sortAlgo = new BubbleSortAlgo();}
     
     
     //Loose Coupling
+    
     public class ComplexBusinessService {
+      
       SortAlgo sortAlgo; 
+      
       public ComplexBusinessService(SortAlgo sortAlgo) {
+        
         this.sortAlgo = sortAlgo
+      
       }
+    
     }
   
   - Use "@" annotations to identify objects Spring needs to manage and what are the dependencies
