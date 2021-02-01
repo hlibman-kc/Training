@@ -1,8 +1,8 @@
 # Spring_Framework Training
 Link to Spring Training repo: https://github.com/in28minutes/spring-master-class
 
- Section 1
-  # Code example: tight coupling to loose coupling
+ # Section 1
+ Code example: tight coupling to loose coupling
     //Tight Coupling
     public class ComplexBusinessService {SortAlgo sortAlgo = new BubbleSortAlgo();}
     
