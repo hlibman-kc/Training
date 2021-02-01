@@ -13,13 +13,13 @@ Link to Spring Training repo: https://github.com/in28minutes/spring-master-class
     
     public class ComplexBusinessService {
       
-      SortAlgo sortAlgo; 
+       SortAlgo sortAlgo; 
       
-      public ComplexBusinessService(SortAlgo sortAlgo) {
+       public ComplexBusinessService(SortAlgo sortAlgo) {
         
         this.sortAlgo = sortAlgo
       
-      }
+       }
     
     }
   
