@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80544e19-e891-4b67-b367-df673d5af116" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/training/junit/MyMath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/com/training/junit/AssertTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/com/training/junit/MyMathTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/junit-in-5-steps.iml" beforeDir="false" afterPath="$PROJECT_DIR$/junit-in-5-steps.iml" afterDir="false" />
-    </list>
+    <list default="true" id="80544e19-e891-4b67-b367-df673d5af116" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,17 +48,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.MyMathTest">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AssertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit-in-5-steps" />
       <extension name="coverage">
@@ -164,7 +145,16 @@
       <option name="presentableId" value="Default" />
       <updated>1612367178879</updated>
       <workItem from="1612367180033" duration="2801000" />
+      <workItem from="1612370960458" duration="29000" />
     </task>
+    <task id="LOCAL-00001" summary="Finished Junit">
+      <created>1612370981222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612370981222</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,5 +170,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished Junit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Junit" />
   </component>
 </project>
