@@ -15,7 +15,7 @@ public class MethodExecutionCalculationAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Around("execution(* com.training.spring.aop.springaop.business.*.*(..))")
+    @Around("com.training.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
     public void afterReturning(ProceedingJoinPoint joinPoint) throws Throwable {
         //startTime = x
         long startTime = System.currentTimeMillis();
