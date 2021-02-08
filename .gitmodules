@@ -1,0 +1,3 @@
+[submodule "XP/tdd-by-example"]
+	path = XP/tdd-by-example
+	url = https://github.com/springframeworkguru/tdd-by-example.git
