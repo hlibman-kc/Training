@@ -1,12 +1,15 @@
 package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.ControllerTests;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -22,20 +25,18 @@ class IndexControllerTest implements ControllerTests {
     @DisplayName("Test Proper View name is returned for index page")
     @Test
     void index() {
-        //Junit assertions
         assertEquals("index", controller.index());
         assertEquals("index", controller.index(), "Wrong View Returned");
 
         assertEquals("index", controller.index(), () -> "Another Expensive Message " +
                 "Make me only if you have to");
 
-        //AssertJ assertion
         assertThat(controller.index()).isEqualTo("index");
     }
 
     @Test
-    @DisplayName("Test Exception")
-    void oopsHandler() {
+    @DisplayName("Test exception")
+    void oupsHandler() {
         assertThrows(ValueNotFoundException.class, () -> {
             controller.oopsHandler();
         });
@@ -46,28 +47,32 @@ class IndexControllerTest implements ControllerTests {
     void testTimeOut() {
 
         assertTimeout(Duration.ofMillis(100), () -> {
-           Thread.sleep(5000);
-            System.out.println("i got here");
+            Thread.sleep(5000);
+
+            System.out.println("I got here");
         });
     }
 
-    @Disabled("Demo of timeout peremptive")
+    @Disabled("Demo of timeout")
     @Test
     void testTimeOutPrempt() {
 
         assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
             Thread.sleep(5000);
-            System.out.println("i got here 23423423423");
+
+            System.out.println("I got here 2342342342342");
         });
     }
 
     @Test
     void testAssumptionTrue() {
+
         assumeTrue("GURU".equalsIgnoreCase(System.getenv("GURU_RUNTIME")));
     }
 
     @Test
     void testAssumptionTrueAssumptionIsTrue() {
+
         assumeTrue("GURU".equalsIgnoreCase("GURU"));
     }
 
@@ -91,9 +96,9 @@ class IndexControllerTest implements ControllerTests {
     void testMeOnJava11() {
     }
 
-    @EnabledIfEnvironmentVariable(named = "USER", matches = "hlibman")
+    @EnabledIfEnvironmentVariable(named = "USER", matches = "jt")
     @Test
-    void testIfUserHlibman() {
+    void testIfUserJT() {
     }
 
     @EnabledIfEnvironmentVariable(named = "USER", matches = "fred")

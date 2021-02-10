@@ -14,22 +14,23 @@ import org.junit.jupiter.api.Test;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class VetControllerTest implements ControllerTests {
 
     VetService vetService;
     SpecialtyService specialtyService;
+
     VetController vetController;
 
     @BeforeEach
     void setUp() {
         specialtyService = new SpecialityMapService();
         vetService = new VetMapService(specialtyService);
+
         vetController = new VetController(vetService);
 
         Vet vet1 = new Vet(1L, "joe", "buck", null);
-        Vet vet2 = new Vet(2L, "hortunk", "libwinkle", null);
+        Vet vet2 = new Vet(2L, "Jimmy", "Smith", null);
 
         vetService.save(vet1);
         vetService.save(vet2);

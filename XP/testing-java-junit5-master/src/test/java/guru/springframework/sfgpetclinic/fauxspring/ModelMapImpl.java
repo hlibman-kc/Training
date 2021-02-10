@@ -3,8 +3,10 @@ package guru.springframework.sfgpetclinic.fauxspring;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by jt on 2018-10-25.
+ */
 public class ModelMapImpl implements Model {
-
     Map<String, Object> map = new HashMap<>();
 
     @Override
@@ -15,7 +17,7 @@ public class ModelMapImpl implements Model {
 
     @Override
     public void addAttribute(Object o) {
-        // do nothing
+            // do nothing...
     }
 
     public Map<String, Object> getMap() {
