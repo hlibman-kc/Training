@@ -21,7 +21,7 @@ class HearingInterpreterInnerClassTest {
     static class TestConfig {
 
         @Bean
-        HearingInterpreter hearingInterpreter(){
+        HearingInterpreter hearingInterpreter() {
             return new HearingInterpreter(new LaurelWordProducer());
         }
     }

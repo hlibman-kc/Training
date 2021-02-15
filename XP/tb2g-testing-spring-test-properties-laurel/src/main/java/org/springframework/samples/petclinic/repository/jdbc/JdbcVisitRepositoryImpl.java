@@ -53,8 +53,8 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
 
         this.insertVisit = new SimpleJdbcInsert(dataSource)
-            .withTableName("visits")
-            .usingGeneratedKeyColumns("id");
+                .withTableName("visits")
+                .usingGeneratedKeyColumns("id");
     }
 
 
@@ -62,7 +62,7 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
     public void save(Visit visit) throws DataAccessException {
         if (visit.isNew()) {
             Number newKey = this.insertVisit.executeAndReturnKey(
-                createVisitParameterSource(visit));
+                    createVisitParameterSource(visit));
             visit.setId(newKey.intValue());
         } else {
             throw new UnsupportedOperationException("Visit update not supported");
@@ -75,10 +75,10 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
      */
     private MapSqlParameterSource createVisitParameterSource(Visit visit) {
         return new MapSqlParameterSource()
-            .addValue("id", visit.getId())
-            .addValue("visit_date", visit.getDate())
-            .addValue("description", visit.getDescription())
-            .addValue("pet_id", visit.getPet().getId());
+                .addValue("id", visit.getId())
+                .addValue("visit_date", visit.getDate())
+                .addValue("description", visit.getDescription())
+                .addValue("pet_id", visit.getPet().getId());
     }
 
     @Override
@@ -91,10 +91,10 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
                 new JdbcPetRowMapper());
 
         List<Visit> visits = this.jdbcTemplate.query(
-            "SELECT id as visit_id, visit_date, description FROM visits WHERE pet_id=:id",
-            params, new JdbcVisitRowMapper());
+                "SELECT id as visit_id, visit_date, description FROM visits WHERE pet_id=:id",
+                params, new JdbcVisitRowMapper());
 
-        for (Visit visit: visits) {
+        for (Visit visit : visits) {
             visit.setPet(pet);
         }
 

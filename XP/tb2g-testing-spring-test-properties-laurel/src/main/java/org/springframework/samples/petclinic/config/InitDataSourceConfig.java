@@ -43,19 +43,19 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 
 @Configuration
 public class InitDataSourceConfig {
-	
-	@Autowired
-	private Environment env;
-	
-	@Autowired
-	private DataSource dataSource;
-	
-	@PostConstruct
-	public void init() {
-		ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
-		databasePopulator.addScript(new ClassPathResource(env.getProperty("jdbc.initLocation")));
-		databasePopulator.addScript(new ClassPathResource(env.getProperty("jdbc.dataLocation")));
-		DatabasePopulatorUtils.execute(databasePopulator, dataSource);
-	}
+
+    @Autowired
+    private Environment env;
+
+    @Autowired
+    private DataSource dataSource;
+
+    @PostConstruct
+    public void init() {
+        ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
+        databasePopulator.addScript(new ClassPathResource(env.getProperty("jdbc.initLocation")));
+        databasePopulator.addScript(new ClassPathResource(env.getProperty("jdbc.dataLocation")));
+        DatabasePopulatorUtils.execute(databasePopulator, dataSource);
+    }
 
 }

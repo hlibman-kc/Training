@@ -48,13 +48,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @Configuration
 @Profile({"jpa", "spring-data-jpa"})
 public class SharedJpaConfig {
-	
+
     @Autowired
-    private Environment        env;
-    
-	@Autowired
-	private DataSource dataSource;
-	
+    private Environment env;
+
+    @Autowired
+    private DataSource dataSource;
+
     @Bean
     public EntityManagerFactory entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
@@ -66,28 +66,28 @@ public class SharedJpaConfig {
         em.afterPropertiesSet();
         return em.getObject();
     }
-    
+
     @Bean
     public JpaVendorAdapter jpaVendorAdaper() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         // the 'database' parameter refers to the database dialect being used.
-    	// By default, Hibernate will use a 'HSQL' dialect because 'jpa.database' has been set to 'HSQL'
-    	// inside file spring/data-access.properties
+        // By default, Hibernate will use a 'HSQL' dialect because 'jpa.database' has been set to 'HSQL'
+        // inside file spring/data-access.properties
         vendorAdapter.setDatabase(env.getProperty("jpa.database", Database.class));
         vendorAdapter.setShowSql(env.getProperty("jpa.showSql", Boolean.class));
         return vendorAdapter;
     }
-    
-    @Bean(name="transactionManager")
+
+    @Bean(name = "transactionManager")
     public JpaTransactionManager jpaTransactionManager() {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
         jpaTransactionManager.setEntityManagerFactory(entityManagerFactory());
         return jpaTransactionManager;
     }
-    
+
     @Bean
     public PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor() {
-    	return new PersistenceExceptionTranslationPostProcessor();
+        return new PersistenceExceptionTranslationPostProcessor();
     }
 
 

@@ -33,7 +33,8 @@ class HearingInterpreterInnerClassTest {
     @Test
     void whatIHeard() {
 
-        String word = hearingInterpreter.whatIHeard();;
+        String word = hearingInterpreter.whatIHeard();
+        ;
 
         assertEquals("Laurel", word);
     }

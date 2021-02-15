@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Profile({"externalized", "laurel-properties"})
 @Primary
-public class PropertiesWordProducer implements WordProducer{
+public class PropertiesWordProducer implements WordProducer {
 
     private String word;
 

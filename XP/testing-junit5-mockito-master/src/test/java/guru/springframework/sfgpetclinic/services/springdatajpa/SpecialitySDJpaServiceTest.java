@@ -19,7 +19,7 @@ class SpecialitySDJpaServiceTest {
 
     @Mock
     SpecialtyRepository specialtyRepository;
-    
+
     @InjectMocks
     SpecialitySDJpaService service;
 
@@ -78,7 +78,6 @@ class SpecialitySDJpaServiceTest {
 
         verify(specialtyRepository, never()).deleteById(5L);
     }
-
 
 
     @Test

@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class AddOperation extends BinaryOperation{
+public class AddOperation extends BinaryOperation {
 
     @Override
     protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {

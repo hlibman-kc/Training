@@ -52,11 +52,11 @@ class OwnerControllerTest {
     @Test
     void testUpdateOwnerPostValid() throws Exception {
         mockMvc.perform(post("/owners/{ownerId}/edit", 1)
-                    .param("firstName", "Hortunk")
-                    .param("lastName", "Libwinkle")
-                    .param("address", "1274 Glencoe")
-                    .param("city", "Chicago")
-                    .param("telephone", "8477703651"))
+                .param("firstName", "Hortunk")
+                .param("lastName", "Libwinkle")
+                .param("address", "1274 Glencoe")
+                .param("city", "Chicago")
+                .param("telephone", "8477703651"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/{ownerId}"));
     }
@@ -64,9 +64,9 @@ class OwnerControllerTest {
     @Test
     void testUpdateOwnerPostNotValid() throws Exception {
         mockMvc.perform(post("/owners/{ownerId}/edit", 1)
-                    .param("firstName", "Hortunk")
-                    .param("lastName", "Libwinkle")
-                    .param("address", "1274 Glencoe"))
+                .param("firstName", "Hortunk")
+                .param("lastName", "Libwinkle")
+                .param("address", "1274 Glencoe"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/createOrUpdateOwnerForm"));
     }
@@ -74,20 +74,20 @@ class OwnerControllerTest {
     @Test
     void testNewOwnerPostValid() throws Exception {
         mockMvc.perform(post("/owners/new")
-                    .param("firstName", "Hortunk")
-                    .param("lastName", "Libwinkle")
-                    .param("address", "1274 Glencoe")
-                    .param("city", "Chicago")
-                    .param("telephone", "8477703651"))
+                .param("firstName", "Hortunk")
+                .param("lastName", "Libwinkle")
+                .param("address", "1274 Glencoe")
+                .param("city", "Chicago")
+                .param("telephone", "8477703651"))
                 .andExpect(status().is3xxRedirection());
     }
 
     @Test
     void testNewOwnerPostNotValid() throws Exception {
         mockMvc.perform(post("/owners/new")
-                    .param("firstName", "Hortunk")
-                    .param("lastName", "Libwinkle")
-                    .param("city", "Chicago"))
+                .param("firstName", "Hortunk")
+                .param("lastName", "Libwinkle")
+                .param("city", "Chicago"))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeHasErrors("owner"))
                 .andExpect(model().attributeHasFieldErrors("owner", "address"))
@@ -128,7 +128,7 @@ class OwnerControllerTest {
     @Test
     void testFindByNameNotFound() throws Exception {
         mockMvc.perform(get("/owners")
-                    .param("lastName", "Dont find ME!!"))
+                .param("lastName", "Dont find ME!!"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/findOwners"));
     }
@@ -136,8 +136,8 @@ class OwnerControllerTest {
     @Test
     void initCreationFormTest() throws Exception {
         mockMvc.perform(get("/owners/new"))
-            .andExpect(status().isOk())
-            .andExpect(model().attributeExists("owner"))
-            .andExpect(view().name("owners/createOrUpdateOwnerForm"));
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("owner"))
+                .andExpect(view().name("owners/createOrUpdateOwnerForm"));
     }
 }

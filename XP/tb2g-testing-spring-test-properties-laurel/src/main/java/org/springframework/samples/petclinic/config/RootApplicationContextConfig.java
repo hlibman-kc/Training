@@ -42,11 +42,11 @@ import org.springframework.core.env.Environment;
 @Configuration
 @Import({BusinessConfig.class, ToolsConfig.class})
 public class RootApplicationContextConfig {
-	
+
     private static final Logger LOG = LoggerFactory.getLogger(RootApplicationContextConfig.class);
 
     @Autowired
-    private Environment         env;
+    private Environment env;
 
     /**
      * Application custom initialization code.

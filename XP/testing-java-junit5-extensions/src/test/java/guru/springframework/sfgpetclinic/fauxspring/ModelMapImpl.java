@@ -17,7 +17,7 @@ public class ModelMapImpl implements Model {
 
     @Override
     public void addAttribute(Object o) {
-            // do nothing...
+        // do nothing...
     }
 
     public Map<String, Object> getMap() {

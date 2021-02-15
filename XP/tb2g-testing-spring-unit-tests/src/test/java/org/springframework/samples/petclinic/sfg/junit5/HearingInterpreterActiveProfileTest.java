@@ -26,7 +26,8 @@ public class HearingInterpreterActiveProfileTest {
     @Test
     void whatIHeard() {
 
-        String word = hearingInterpreter.whatIHeard();;
+        String word = hearingInterpreter.whatIHeard();
+        ;
 
         assertEquals("Yanny", word);
     }

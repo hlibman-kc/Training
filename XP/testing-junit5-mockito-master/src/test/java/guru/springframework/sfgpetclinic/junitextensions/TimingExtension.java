@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 /**
  * Original source - https://junit.org/junit5/docs/current/user-guide/#extensions-lifecycle-callbacks-timing-extension
- *
+ * <p>
  * Created by jt on 2018-10-28.
  */
 public class TimingExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback {

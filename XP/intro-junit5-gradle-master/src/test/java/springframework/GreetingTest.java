@@ -7,7 +7,7 @@ class GreetingTest {
     private Greeting greeting;
 
     @BeforeAll
-    public static void beforeClass(){
+    public static void beforeClass() {
         System.out.println("Before - I am only called Once!!!");
     }
 
@@ -46,7 +46,7 @@ class GreetingTest {
     }
 
     @AfterAll
-    public static void afterClass(){
+    public static void afterClass() {
         System.out.println("After!!! ***** - I am only called Once!!!");
     }
 }

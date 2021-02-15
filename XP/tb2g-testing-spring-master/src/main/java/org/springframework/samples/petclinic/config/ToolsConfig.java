@@ -49,25 +49,25 @@ import org.springframework.samples.petclinic.util.CallMonitoringAspect;
 @EnableMBeanExport
 @EnableAspectJAutoProxy
 public class ToolsConfig {
-	
-	@Bean
-    @Description("Call monitoring aspect that monitors call count and call invocation time")
-	public CallMonitoringAspect callMonitor() {
-		return new CallMonitoringAspect();
-	}
-	
-	@Bean
-	@Autowired
-	public EhCacheCacheManager ehCacheCacheManager(CacheManager cacheManager) {
-		EhCacheCacheManager ehCacheCacheManager = new EhCacheCacheManager();
-		ehCacheCacheManager.setCacheManager(cacheManager);
-		return ehCacheCacheManager;
-	}
 
-	@Bean
-	public EhCacheManagerFactoryBean cacheManager() {
-		EhCacheManagerFactoryBean ehCacheManager = new EhCacheManagerFactoryBean();
-		ehCacheManager.setConfigLocation(new ClassPathResource("cache/ehcache.xml"));
-		return ehCacheManager;
-	}
+    @Bean
+    @Description("Call monitoring aspect that monitors call count and call invocation time")
+    public CallMonitoringAspect callMonitor() {
+        return new CallMonitoringAspect();
+    }
+
+    @Bean
+    @Autowired
+    public EhCacheCacheManager ehCacheCacheManager(CacheManager cacheManager) {
+        EhCacheCacheManager ehCacheCacheManager = new EhCacheCacheManager();
+        ehCacheCacheManager.setCacheManager(cacheManager);
+        return ehCacheCacheManager;
+    }
+
+    @Bean
+    public EhCacheManagerFactoryBean cacheManager() {
+        EhCacheManagerFactoryBean ehCacheManager = new EhCacheManagerFactoryBean();
+        ehCacheManager.setConfigLocation(new ClassPathResource("cache/ehcache.xml"));
+        return ehCacheManager;
+    }
 }

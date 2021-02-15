@@ -1,6 +1,6 @@
 package guru.springframework;
 
-public class Money implements Expression{
+public class Money implements Expression {
 
     protected int amount;
     protected String currency;

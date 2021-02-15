@@ -45,6 +45,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @Import({DataSourceConfig.class, InitDataSourceConfig.class, JdbcConfig.class, SharedJpaConfig.class, JpaConfig.class, SpringDataJpaConfig.class})
 public class BusinessConfig {
-		
+
 
 }

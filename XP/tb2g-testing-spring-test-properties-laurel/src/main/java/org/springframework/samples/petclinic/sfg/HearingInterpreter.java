@@ -14,7 +14,7 @@ public class HearingInterpreter {
         this.wordProducer = wordProducer;
     }
 
-    public String whatIheard(){
+    public String whatIheard() {
         String word = wordProducer.getWord();
 
         System.out.println(word);

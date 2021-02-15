@@ -29,7 +29,8 @@ public class PropertiesTest {
     @Test
     void whatIHeard() {
 
-        String word = hearingInterpreter.whatIHeard();;
+        String word = hearingInterpreter.whatIHeard();
+        ;
 
         assertEquals("YaNNy", word);
     }

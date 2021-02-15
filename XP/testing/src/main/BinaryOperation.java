@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public abstract class BinaryOperation implements Operation{
+public abstract class BinaryOperation implements Operation {
 
     @Override
     public void apply(OperandStack values) {

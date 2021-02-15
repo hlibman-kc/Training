@@ -29,6 +29,7 @@ public class CalculatorWithThreeValuesTest {
     public void testAccumulatorAfterPushingThreeValues() {
         assertEquals(value3, calculator.getAccumulator());
     }
+
     @Test
     public void testAccumulatorAfterSingleDrop() {
         calculator.drop();
