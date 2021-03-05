@@ -31,9 +31,13 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
-
     public User() {
         super();
+    }
+
+    public User(@Size(min = 2, message = "Name should have at least 2 characters") String name, @Past Date birthDate) {
+        this.name = name;
+        this.birthDate = birthDate;
     }
 
     public User(Integer id, String name, Date birthDate) {
